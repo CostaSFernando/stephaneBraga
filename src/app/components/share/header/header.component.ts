@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationStart, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'nail-header',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  currentRoute: string
+
+  constructor(
+    private readonly router: Router
+  ) {
+    this.currentRoute = '';
+  }
 
   ngOnInit(): void {
+    this.routeSelected();
+  }
+
+  routeSelected() {
+    this.router.events.pipe(filter(e => e instanceof NavigationStart)).subscribe(e => {
+      this.currentRoute = (e as NavigationStart).url
+    });
   }
 
 }
