@@ -1,32 +1,30 @@
-<div class="container-header">
-  <div class="header">
-    <div class="header--logo" routerLink="">
-      <img src="/assets/img/logo.png">
+<div class="header">
+  <div class="header--logo" routerLink="">
+    <img src="/assets/img/logo.png">
+  </div>
+  <div class="header--name">
+    <div>
+      Stephane
+      <span>
+        Braga
+      </span>
     </div>
-    <div class="header--name">
-      <div>
-        Stephane
-        <span>
-          Braga
-        </span>
-      </div>
-    </div>
+  </div>
 
-    <div class="header--menu">
-      <div class="header--menu-itens">
-        <div routerLink="portfolio" [ngClass]="{'selected-route': (currentRoute === '/portfolio')}">
-          Portifólio
-        </div>
-        <div routerLink="course" [ngClass]="{'selected-route': (currentRoute === '/course')}">
-          Curso
-        </div>
-        <div routerLink="about" [ngClass]="{'selected-route': (currentRoute === '/about')}">
-          Sobre
-        </div>
+  <div class="header--menu">
+    <div class="header--menu-itens">
+      <div routerLink="portfolio" [ngClass]="{'selected-route': (currentRoute === '/portfolio')}">
+        Portifólio
       </div>
-      <div class="header--menu-qrcode">
-        <img src="/assets/img/qrcodes/whatsapp.png">
+      <div routerLink="course" [ngClass]="{'selected-route': (currentRoute === '/course')}">
+        Curso
       </div>
+      <div routerLink="about" [ngClass]="{'selected-route': (currentRoute === '/about')}">
+        Sobre
+      </div>
+    </div>
+    <div class="header--menu-qrcode">
+      <img src="/assets/img/qrcodes/whatsapp.png">
     </div>
   </div>
 </div>
