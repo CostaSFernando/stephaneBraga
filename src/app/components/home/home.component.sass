@@ -1,29 +1,36 @@
 .container
-  height: 70vh
-  max-width: 700px
+  height: calc(70vh - 90px)
+  max-width: 750px
   margin: 0 auto
-  display: flex
-  flex-direction: column
-  justify-content: space-evenly
+  padding: 30px
+  box-sizing: border-box
 
-.carousel
-  height: 80%
-  // max-height: 330px
+  &--carousel
+    display: flex
+    width: 100%
+    height: 100%
 
-  &--gallery
-    height: 60%
-    max-height: 330px
-    div
-      height: 100% !important
+    .carousel
+      width: 100%
+      height: 100%
+      display: flex
+      flex-direction: row
+      overflow-x: auto
+      overflow-y: hidden
 
-.carousel--gallery-cell
-  width: 66%
-  margin-right: 10px
-  display: flex
-  justify-content: center
-  img
-    max-height: 100%
-    max-width: 100%
-    border-radius: 10px
+      scroll-snap-type: x mandatory
+      -webkit-overflow-scrolling: touch
+      scroll-behavior: smooth
 
-
+      &--item
+        flex: none
+        width: calc(100% - 60px)
+        padding: 5px
+        pointer-events: none
+        scroll-snap-align: center
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+          border-radius: 10px
+          box-shadow: var(--box-shadow-images)
